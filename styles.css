@@ -98,35 +98,45 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Make it responsive */
-    gap: 50px;
+    gap: 200px;
     padding: 20px; /* Add some padding */
     height: auto; /* Adjust height */
     color: rgb(61, 59, 64);
     background: linear-gradient(to bottom, whitesmoke 50%, rgba(182, 197, 221, 0.568) 100%);
     background-repeat: no-repeat;
+    padding-bottom: 200px;
 }
 
 .about_me h1 {
     margin-top: 75px;
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
 }
 
-.about_me h4, .about_me h5 {
+.about_me h4 {
     border-top: solid 2.5px rgb(61, 59, 64);
     width: 100%;
     max-width: 400px;
-    margin: 20px auto;
-    padding: 70px 0;
+    padding-top: 50px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.about_me h5{
+    border-bottom: solid 2.5px rgb(61, 59, 64);
+    width: 100%;
+    max-width: 400px;
+    margin: px auto;
+    padding: 50px 0px;
     font-size: 17px;
     text-align: center;
 }
 
 .me_img img {
-    margin-top: 20px;
+    margin-top: 120px;
     width: 100%;
     max-width: 480px;
-    height: auto;
+    height: 500px;
     border-radius: 1000px;
 }
 
