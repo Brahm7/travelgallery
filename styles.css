@@ -143,7 +143,7 @@ body {
 /* Map Section */
 .map_section {
     background-color: rgba(182, 197, 221, 0.568);
-    height: auto;
+    height: 90vh;
     padding: 20px; /* Add some padding */
     text-align: center;
 }
@@ -158,8 +158,9 @@ body {
 
 .us_map {
     max-width: 100%; /* Make it responsive */
-    margin: 10px auto;
-    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+
 }
 
 .us_map path {
