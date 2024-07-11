@@ -104,7 +104,7 @@ body {
     color: rgb(61, 59, 64);
     background: linear-gradient(to bottom, whitesmoke 50%, rgba(182, 197, 221, 0.568) 100%);
     background-repeat: no-repeat;
-    padding-bottom: 200px;
+   
 }
 
 .about_me h1 {
@@ -143,24 +143,32 @@ body {
 /* Map Section */
 .map_section {
     background-color: rgba(182, 197, 221, 0.568);
-    height: 90vh;
+    height: 100vh;
     padding: 20px; /* Add some padding */
     text-align: center;
 }
 
 .map_section h3 {
     display: flex;
-    padding-top: 20px;
+    padding-top: 50px;
     justify-content: center;
-    color: white;
-    text-shadow: 0 0 5px rgb(74, 97, 224); /* Add this line for the glow effect */
+    color: rgb(50, 60, 206);
+ 
+
 }
 
 .us_map {
-    max-width: 100%; /* Make it responsive */
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    margin-top: 100px;
+}
 
+.us_map svg{
+
+    width: 105%;
 }
 
 .us_map path {
@@ -236,53 +244,97 @@ body {
 
     .welcome_section h3 {
         font-size: 40px;
+        
     }
 
     .second_section {
-        gap: 100px;
+        gap: 50px;
+    }
+
+    .second_section {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: -50px;
     }
 }
 
 @media (max-width: 768px) {
-    .welcome_section {
-        margin: 150px 50px;
+    .main_section{
+        height: 75vh;
     }
 
     .welcome_section h3 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .second_section {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: -50px;
+    }
+
+    .me_img{
+        display: flex;
+        justify-content: center;
+        margin-bottom: -100px;
+    }
+
+    .me_img img{
+        height: 340px;
+        width:260px;
+
+    }
+    .about_me{
+        display: flex;
         flex-direction: column;
-        height: auto;
-        padding: 20px;
+        align-items: center;
+
     }
 
     .about_me h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .about_me h4, .about_me h5 {
-        font-size: 15px;
-        padding: 50px 0;
+        font-size: 14px;
+        padding: 20px 0;
     }
 
     .map_section h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
+/*---IPHONE---*/
 @media (max-width: 480px) {
-    .welcome_section {
-        margin: 100px 20px;
+    .main_section{
+        height: 80vh;
     }
 
     .welcome_section h3 {
         font-size: 20px;
     }
 
+   
+
     .second_section {
-        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: -50px;
+    }
+
+    .me_img{
+        display: flex;
+        justify-content: center;
+        margin-bottom: -100px;
+    }
+
+    .me_img img{
+        height: 340px;
+        width:260px;
+
     }
 
     .about_me h1 {
@@ -290,11 +342,12 @@ body {
     }
 
     .about_me h4, .about_me h5 {
-        font-size: 12px;
-        padding: 30px 0;
+        font-size: 14px;
+        padding: 20px 0;
     }
 
     .map_section h3 {
         font-size: 20px;
+        margin-bottom: 50px;
     }
 }
