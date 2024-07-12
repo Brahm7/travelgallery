@@ -1,29 +1,59 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
-    const txState = document.getElementById("tx");
+    // Get the modal
     const modal = document.getElementById("modal");
-    const closeModalBtn = document.querySelector(".close-btn");
 
-    txState.addEventListener("click", () => {
+    // Get the button that opens the modal
+    const btn = document.getElementById("openModal");
+
+    // Get the <span> element that closes the modal
+    const closeBtn = document.querySelector(".close-btn");
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
         modal.style.display = "block";
-        setTimeout(() => {
-            modal.style.opacity = "1";
-        }, 10);
-    });
+    }
 
-    closeModalBtn.addEventListener("click", () => {
-        modal.style.opacity = "0";
-        setTimeout(() => {
+    // When the user clicks on <span> (x), close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
-        }, 500);
+        }
+    }
+
+    // Carousel functionality
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("carousel-item");
+        if (n >= slides.length) {slideIndex = 0}
+        if (n < 0) {slideIndex = slides.length - 1}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+    }
+
+    document.querySelector('.prev').addEventListener('click', function() {
+        plusSlides(-1);
     });
 
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.opacity = "0";
-            setTimeout(() => {
-                modal.style.display = "none";
-            }, 500);
-        }
+    document.querySelector('.next').addEventListener('click', function() {
+        plusSlides(1);
     });
 });
