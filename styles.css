@@ -1,15 +1,17 @@
 /* styles.css */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif !important;
+    
 }
 
-body {
+body{
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif !important;
 }
 
 .main_section {
@@ -143,32 +145,33 @@ body {
 /* Map Section */
 .map_section {
     background-color: rgba(182, 197, 221, 0.568);
-    height: 100vh;
     padding: 20px; /* Add some padding */
     text-align: center;
 }
 
 .map_section h3 {
     display: flex;
-    padding-top: 50px;
+
     justify-content: center;
     color: rgb(50, 60, 206);
- 
+    padding-top: 20vh;
 
 }
 
 .us_map {
     display: flex;
-    justify-content: center;    
+    width: 100%;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
-    margin-top: 100px;
+    align-self: center;
 }
 
-.us_map svg{
-
-    width: 105%;
+.us_map svg {
+    width: 100%;
+    max-width: 100vh; /* Limit the maximum width to avoid overflow */
+    padding-top: 1vh;
+    padding-bottom: 8vh;
 }
 
 .us_map path {
@@ -204,17 +207,31 @@ body {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 10px;
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Max width for large screens */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.5s;
 }
 
-.modal-content img {
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.carousel-inner img {
     width: 100%;
-    max-width: 200px;
+    height: auto; /* Maintain aspect ratio */
 }
 
 @keyframes fadeIn {
@@ -303,7 +320,8 @@ body {
     }
 
     .map_section h3 {
-        font-size: 20px;
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 }
 
@@ -347,7 +365,7 @@ body {
     }
 
     .map_section h3 {
-        font-size: 20px;
-        margin-bottom: 50px;
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 }
