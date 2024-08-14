@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Get the modal
+
     const modal = document.getElementById("modal");
-
-    // Get the button that opens the modal
     const btn = document.getElementById("openModal");
-
-    // Get the <span> element that closes the modal
     const closeBtn = document.querySelector(".close-btn");
 
     // When the user clicks on the button, open the modal
