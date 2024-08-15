@@ -1,55 +1,63 @@
+window.addEventListener('load', function() {
+    if (window.location.hash) {
+        window.location.hash = '';
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-
-    const modal = document.getElementById("modal");
-    const btn = document.getElementById("openModal");
-    const closeBtn = document.querySelector(".close-btn");
-
-    // When the user clicks on the button, open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
+    // Function to open a modal
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
+    // Function to close a modal
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    // Carousel functionality
-    let slideIndex = 0;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("carousel-item");
-        if (n >= slides.length) {slideIndex = 0}
-        if (n < 0) {slideIndex = slides.length - 1}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.transform = `translateX(${-slideIndex * 100}%)`;
-        }
-    }
-
-    document.querySelector('.prev').addEventListener('click', function() {
-        plusSlides(-1);
+    // Add event listeners to open modals
+    const openModalButtons = document.querySelectorAll("[data-modal-target]");
+    openModalButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const modalId = button.getAttribute("data-modal-target");
+            openModal(modalId);
+        });
     });
 
-    document.querySelector('.next').addEventListener('click', function() {
-        plusSlides(1);
+    // Add event listener to close modals when clicking outside
+    window.addEventListener("click", event => {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                closeModal(modal.id);
+            }
+        });
+    });
+
+    // Carousel functionality for each modal
+    document.querySelectorAll(".modal").forEach(modal => {
+        let slideIndex = 0;
+        const slides = modal.getElementsByClassName("carousel-item");
+
+        function showSlides(n) {
+            if (n >= slides.length) {slideIndex = 0}
+            if (n < 0) {slideIndex = slides.length - 1}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = `translateX(${-slideIndex * 100}%)`;
+            }
+        }
+
+        // Initial display of slides
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        modal.querySelector('.prev').addEventListener('click', function() {
+            showSlides(slideIndex += -1);
+        });
+
+        modal.querySelector('.next').addEventListener('click', function() {
+            showSlides(slideIndex += 1);
+        });
     });
 });
+

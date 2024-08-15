@@ -214,7 +214,7 @@ body{
 .modal-content {
     display: flex;
     justify-content: center;
-    background-color: #708394fa;
+    background-color: #a9b9fffb;
     margin: 4% auto; /* 5% from the top and centered */
     padding: 10px;
     width: 90%; /* Responsive width */
@@ -223,19 +223,6 @@ body{
     animation: fadeIn 0.5s;
 }
 
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .carousel {
     position: relative;
@@ -301,7 +288,7 @@ body{
     }
 
     .welcome_section h3 {
-        font-size: 40px;
+        font-size: 45px;
         
     }
 
@@ -324,7 +311,7 @@ body{
     }
 
     .welcome_section h3 {
-        font-size: 20px;
+        font-size: 35px;
     }
 
     .second_section {
@@ -352,11 +339,11 @@ body{
     }
 
     .about_me h1 {
-        font-size: 30px;
+        font-size: 33px;
     }
 
     .about_me h4, .about_me h5 {
-        font-size: 14px;
+        font-size: 16px;
         padding: 20px 0;
     }
 
