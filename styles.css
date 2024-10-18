@@ -1,406 +1,181 @@
-/* styles.css */
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif !important;
-    
+  --whitefont: #fafafa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat", sans-serif !important;
+.main-section {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(19, 22, 17, 0) 60%,
+      /* Start transparent at 60% height */ rgb(17, 19, 22) 90%
+        /* Transition to solid color from 90% */
+    ),
+    url(imgs/946678c3-2d74-4a20-9d14-70f3b92958b3-EDIT.jpg);
+  height: 94vh;
+  background-size: cover; /* Adjust to cover for better responsiveness */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.main_section {
-    background-color: beige;
-    background-image: url(images/colorado_bg.jpg);
-    height: 85vh;
-    background-size: cover; /* Adjust to cover for better responsiveness */
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: #000;
-    overflow: hidden;
+.welcome {
+  color: var(--whitefont);
+  margin-left: 10%;
+  margin-bottom: 50px;
+  width: 500px;
 }
 
-.main_section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.473);
-    pointer-events: none;
-    z-index: 1;
+.welcome h1 {
+  font-size: 1.3rem;
+  margin-bottom: -10px;
 }
 
-.main_section > * {
-    position: relative;
-    z-index: 2;
+.welcome h2 {
+  margin-bottom: -5px;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
-/* Navbar */
-.navbar {
-    padding: 15px 25px;
-    font-size: 11px;
-    color: rgb(248, 241, 241);
+.welcome h3 {
+  font-size: 0.9rem;
 }
 
-/* Welcome Section */
-.welcome_section {
-    margin: 245px 250px;
-    text-align: center;
+.welcome #explore {
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid white;
+  font-size: 15px;
+  background-color: transparent;
+  width: 200px;
+  color: var(--whitefont);
 }
 
-.welcome_section h1 {
-    color: rgb(248, 241, 241);
-    font-size: 35px;
+.welcome #explore:hover {
+  background-color: rgba(195, 198, 214, 0.281);
 }
 
-.welcome_section h3 {
-    color: rgb(248, 241, 241);
-    font-size: 50px;
-    width: 100%; /* Make it responsive */
-    max-width: 470px; /* Maximum width */
-    margin: 0 auto; /* Center it */
-}
-
-.welcome_section a{
-    text-decoration: none;
-}
-
-.welcome_section button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px auto 0 auto;
-    padding: 5px 40px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    background-color: rgb(50, 60, 206);
-    color: rgb(248, 241, 241);
- 
-}
-
-.welcome_section button:hover {
-    background-color: rgb(82, 92, 235);
-
-}
-
-.location {
-    margin-top: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(248, 241, 241);
-}
-
-/* Second Section */
-.second_section {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Make it responsive */
-    gap: 200px;
-    padding: 20px; /* Add some padding */
-    height: auto; /* Adjust height */
-    color: rgb(61, 59, 64);
-   
-   
-}
-
-.about_me h1 {
-    margin-top: 130px;
-    font-size: 45px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.about_me h4 {
-    border-top: solid 2.5px rgb(61, 59, 64);
-    width: 100%;
-    max-width: 400px;
-    padding-top: 20px;
-    font-size: 17px;
-    text-align: center;
-}
-
-.about_me h5{
-    border-bottom: solid 2.5px rgb(61, 59, 64);
-    width: 100%;
-    max-width: 400px;
-    margin: px auto;
-    padding: 20px 0px;
-    font-size: 17px;
-    text-align: center;
-}
-
-.me_img img {
-    margin-top: 120px;
-    width: 100%;
-    max-width: 480px;
-    height: 500px;
-    border-radius: 1000px;
-}
-
-/* Map Section */
-.map_section {
-
-    margin-bottom: 110px;
-}
-
-.map_section h3 {
-    display: flex;
-    justify-content: center;
-    color: rgb(50, 60, 206);
-    padding-top: 15vh;
-
+.map-section {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: var(--whitefont);
+  height: 80vh;
+  background-color: rgb(17, 19, 22); /* Solid color matching the gradient end */
 }
 
 .us_map {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-
-
-}
-
-.us_map svg {
-    max-width: 110vh; /* Limit the maximum width to avoid overflow */
-
+  width: 110vh;
+  height: auto;
 }
 
 .us_map path {
-    fill: rgb(61, 59, 64);
+  fill: rgb(137, 140, 143);
 }
 
-#tx, #nm, #az, #nv, #ny {
-    fill: rgb(84, 134, 211);
+#tx,
+#nm,
+#az,
+#nv,
+#ny,
+#co {
+  fill: rgb(104, 152, 224);
 }
 
-#tx:hover, #nm:hover, #az:hover, #nv:hover, #ny:hover {
-    fill: rgba(84, 135, 211, 0.712);
+#tx:hover,
+#nm:hover,
+#az:hover,
+#nv:hover,
+#ny:hover,
+#co:hover {
+  fill: rgb(155, 176, 207);
 }
 
-#co, #fl {
-    fill: rgb(199, 122, 122);
+#fl {
+  fill: rgb(211, 219, 245);
 }
 
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: none; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    transition: opacity 0.5s ease;
+.close-button {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 15px;
+  box-shadow: none;
+  color: #fafafa93;
 }
 
-.modal-content {
-    display: flex;
-    justify-content: center;
-    background-color: #a9b9fffb;
-    margin: 4% auto; /* 5% from the top and centered */
-    padding: 10px;
-    width: 90%; /* Responsive width */
-    max-width: 800px; /* Max width for large screens */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.5s;
+.close-button:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Prevent focus styles like box-shadow */
 }
 
-
-.carousel {
-    position: relative;
-    max-width: 70%;
-    margin: auto;
-
+.close-button:hover {
+  color: #fafafa;
 }
 
-.carousel-inner {
-    display: flex;
-    overflow: hidden;
-    position: relative;
+#carouselExampleIndicators {
+  position: absolute; /* Absolute positioning for the overlap */
+  top: 50%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Adjusts for the center point */
+  z-index: 2; /* Brings the carousel on top of the map */
+  width: 60vh; /* Adjust as needed to fit the size of the overlap */
+  /*Wont show up unless state is pressed*/
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
 }
 
-.carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease;
+.carousel-inner img {
+  max-height: 100%; /* Ensure image fits within the carousel */
+  object-fit: cover;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for visibility */
-}
-
-.prev {
-    left: 10px;
-    border-radius: 3px 0 0 3px;
-}
-
-.next {
-    right: 10px;
-    border-radius: 0 3px 3px 0;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    .welcome_section {
-        margin: 200px 100px;
-    }
-
-    .welcome_section h3 {
-        font-size: 45px;
-        
-    }
-
-    .second_section {
-        gap: 50px;
-    }
-
-    .second_section {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        margin-top: -50px;
-    }
+.videos {
+  height: 95vh;
+  background-image: linear-gradient(
+      to top,
+      rgba(19, 22, 17, 0) 60%,
+      /* Start transparent at 60% height */ rgb(17, 19, 22) 90%
+        /* Transition to solid color from 90% */
+    ),
+    url(imgs/IMG_1678-EDIT.jpg);
+  background-size: cover; /* Adjust to cover for better responsiveness */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 @media (max-width: 768px) {
-    .main_section{
-        height: 75vh;
-    }
+  .welcome h2 {
+    font-size: 2rem;
+  }
 
-    .welcome_section h3 {
-        font-size: 35px;
-    }
+  .welcome h1,
+  .welcome h3 {
+    font-size: 1rem;
+  }
 
-    .second_section {
-        display: flex;
-        flex-direction: column-reverse;
-        margin-top: -50px;
-    }
+  #carouselExampleIndicators {
+    width: 70vw; /* Full width on mobile */
+  }
 
-    .me_img{
-        display: flex;
-        justify-content: center;
-        margin-bottom: -100px;
-    }
-
-    .me_img img{
-        height: 340px;
-        width:260px;
-
-    }
-    .about_me{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .about_me h1 {
-        font-size: 33px;
-    }
-
-    .about_me h4, .about_me h5 {
-        font-size: 16px;
-        padding: 20px 0;
-    }
-
-    .map_section h3 {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
-
-    
-}
-
-/*---IPHONE---*/
-@media (max-width: 480px) {
-    .main_section{
-        height: 80vh;
-    }
-
-    .welcome_section h3 {
-        font-size: 20px;
-    }
-
-   
-
-    .second_section {
-        display: flex;
-        flex-direction: column-reverse;
-        margin-top: -50px;
-    }
-
-    .me_img{
-        display: flex;
-        justify-content: center;
-        margin-bottom: -100px;
-    }
-
-    .me_img img{
-        height: 340px;
-        width:260px;
-
-    }
-
-    .about_me h1 {
-        font-size: 30px;
-    }
-
-    .about_me h4, .about_me h5 {
-        font-size: 14px;
-        padding: 20px 0;
-    }
-
-    .map_section h3 {
-        font-size: 15px;
-        margin-bottom: 10px;
-    }
-
-    .modal-content{
-        margin: 50% auto; /* 5% from the top and centered */
-        width: 46vh;
-    }
+  .map-section {
+    height: 70vh;
+  }
 }

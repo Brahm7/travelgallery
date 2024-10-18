@@ -1,63 +1,49 @@
-window.addEventListener('load', function() {
-    if (window.location.hash) {
-        window.location.hash = '';
-    }
+const carousel = document.getElementById("carouselExampleIndicators");
+const closeCarousel = document.getElementById("closeCarousel");
+
+document.querySelectorAll('a[id^="carousel"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the anchor from navigating
+
+    const images = this.getAttribute("data-images").split(","); // Get images from data attribute
+    updateCarousel(images); // Update the carousel with these images
+
+    // Show the carousel with a smooth transition
+    carousel.style.transition = "opacity 0.5s ease"; // Optional: smooth transition for showing
+    carousel.style.opacity = "1";
+    carousel.style.pointerEvents = "all";
+  });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Function to open a modal
-    function openModal(modalId) {
-        document.getElementById(modalId).style.display = "block";
-    }
-
-    // Function to close a modal
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-    }
-
-    // Add event listeners to open modals
-    const openModalButtons = document.querySelectorAll("[data-modal-target]");
-    openModalButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const modalId = button.getAttribute("data-modal-target");
-            openModal(modalId);
-        });
-    });
-
-    // Add event listener to close modals when clicking outside
-    window.addEventListener("click", event => {
-        const modals = document.querySelectorAll(".modal");
-        modals.forEach(modal => {
-            if (event.target == modal) {
-                closeModal(modal.id);
-            }
-        });
-    });
-
-    // Carousel functionality for each modal
-    document.querySelectorAll(".modal").forEach(modal => {
-        let slideIndex = 0;
-        const slides = modal.getElementsByClassName("carousel-item");
-
-        function showSlides(n) {
-            if (n >= slides.length) {slideIndex = 0}
-            if (n < 0) {slideIndex = slides.length - 1}
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.transform = `translateX(${-slideIndex * 100}%)`;
-            }
-        }
-
-        // Initial display of slides
-        showSlides(slideIndex);
-
-        // Next/previous controls
-        modal.querySelector('.prev').addEventListener('click', function() {
-            showSlides(slideIndex += -1);
-        });
-
-        modal.querySelector('.next').addEventListener('click', function() {
-            showSlides(slideIndex += 1);
-        });
-    });
+closeCarousel.addEventListener("click", function () {
+  // Hide the carousel with a smooth transition
+  carousel.style.transition = "opacity 0.5s ease"; // Optional: smooth transition for hiding
+  carousel.style.opacity = "0";
+  carousel.style.pointerEvents = "none";
 });
 
+// Function to update the carousel with new images
+function updateCarousel(images) {
+  const carouselInner = carousel.querySelector(".carousel-inner");
+  const carouselIndicators = carousel.querySelector(".carousel-indicators");
+
+  // Clear current items and indicators
+  carouselInner.innerHTML = "";
+  carouselIndicators.innerHTML = "";
+
+  // Create new items and indicators
+  images.forEach((src, index) => {
+    const item = document.createElement("div");
+    item.className = `carousel-item ${index === 0 ? "active" : ""}`;
+    item.innerHTML = `<img class="d-block w-100" src="${src}" alt="Slide ${
+      index + 1
+    }">`;
+    carouselInner.appendChild(item);
+
+    const indicator = document.createElement("li");
+    indicator.setAttribute("data-target", "#carouselExampleIndicators");
+    indicator.setAttribute("data-slide-to", index);
+    if (index === 0) indicator.classList.add("active");
+    carouselIndicators.appendChild(indicator);
+  });
+}
