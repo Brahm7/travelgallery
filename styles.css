@@ -2,6 +2,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body.no-scroll {
+  overflow: hidden; /* Prevent scrolling */
+  position: fixed; /* Fix body position */
+  width: 100%; /* Maintain width */
+}
+
 * {
   --whitefont: #fafafa;
   margin: 0;
@@ -69,13 +75,16 @@ html {
   justify-content: center;
   align-items: center;
   color: var(--whitefont);
-  height: 80vh;
+  height: 70vh;
   background-color: rgb(17, 19, 22); /* Solid color matching the gradient end */
 }
 
 .us_map {
   width: 110vh;
   height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
 }
 
 .us_map path {
@@ -89,6 +98,7 @@ html {
 #ny,
 #co {
   fill: rgb(104, 152, 224);
+  cursor: pointer;
 }
 
 #tx:hover,
@@ -102,6 +112,25 @@ html {
 
 #fl {
   fill: rgb(211, 219, 245);
+}
+
+.overlay {
+  position: fixed; /* Fixes the overlay to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.479); /* Semi-transparent black */
+  z-index: 2; /* Ensure it sits above other content */
+  opacity: 0; /* Start hidden */
+  pointer-events: none; /* Prevents interaction with the overlay */
+  transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
+}
+
+/* Show overlay */
+.overlay.active {
+  opacity: 1; /* Fully visible */
+  pointer-events: all;
 }
 
 .close-button {
@@ -138,7 +167,7 @@ html {
   /*Wont show up unless state is pressed*/
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
 }
 
 .carousel-inner img {
@@ -162,20 +191,24 @@ html {
 }
 
 @media (max-width: 768px) {
-  .welcome h2 {
-    font-size: 2rem;
+  .welcome {
+    background-color: rgba(0, 0, 0, 0.178);
+    margin-right: 35px;
   }
 
-  .welcome h1,
+  .welcome h1 {
+    font-size: 1.3rem;
+  }
+
+  .welcome h2 {
+    font-size: 3rem;
+  }
+
   .welcome h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   #carouselExampleIndicators {
-    width: 70vw; /* Full width on mobile */
-  }
-
-  .map-section {
-    height: 70vh;
+    width: 80vw; /* Full width on mobile */
   }
 }
