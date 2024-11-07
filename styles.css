@@ -2,12 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body.no-scroll {
-  overflow: hidden; /* Prevent scrolling */
-  position: fixed; /* Fix body position */
-  width: 100%; /* Maintain width */
-}
-
 * {
   --whitefont: #fafafa;
   margin: 0;
@@ -56,6 +50,7 @@ body.no-scroll {
 }
 
 .welcome #explore {
+  margin-left: 110px;
   margin-top: 5px;
   border-radius: 4px;
   border: 1px solid white;
@@ -72,19 +67,63 @@ body.no-scroll {
 .map-section {
   display: flex;
   position: relative;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--whitefont);
   height: 70vh;
-  background-color: rgb(17, 19, 22); /* Solid color matching the gradient end */
+  color: var(--whitefont);
+  background-color: rgb(17, 19, 22);
+}
+
+.map-legend {
+  display: flex;
+  align-items: center; /* Centers vertically within the flex container */
+  justify-content: center; /* Centers horizontally */
+  opacity: 0; /*Set back to 0!!!!!!!!*/
+  transition: opacity 1s ease;
+  gap: 60px;
+}
+
+.visited {
+  display: flex;
+  align-items: center;
+}
+
+.non-visited {
+  display: flex;
+  align-items: center;
+}
+
+.map-legend p {
+  padding: 0;
+  margin: 0;
+}
+
+.box {
+  padding: -10px;
+  margin-left: 10px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.411);
+}
+
+#visited {
+  background-color: rgb(104, 152, 224);
+}
+
+#non-visited {
+  background-color: rgb(211, 219, 245);
 }
 
 .us_map {
-  width: 110vh;
+  width: 100%;
+  max-width: 110vh; /* Set this as a limit */
   height: auto;
-  opacity: 0;
+  opacity: 0; /*Set back to 0!!!!!!!!*/
   pointer-events: none;
   transition: opacity 1s ease;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .us_map path {
@@ -110,7 +149,8 @@ body.no-scroll {
   fill: rgb(155, 176, 207);
 }
 
-#fl {
+#fl,
+#wy {
   fill: rgb(211, 219, 245);
 }
 
@@ -176,7 +216,7 @@ body.no-scroll {
 }
 
 .videos {
-  height: 95vh;
+  height: 100vh;
   background-image: linear-gradient(
       to top,
       rgba(19, 22, 17, 0) 60%,
@@ -208,7 +248,22 @@ body.no-scroll {
     font-size: 0.9rem;
   }
 
+  .welcome #explore {
+    background-color: none;
+  }
+
   #carouselExampleIndicators {
-    width: 80vw; /* Full width on mobile */
+    width: 95vw; /* Full width on mobile */
+  }
+
+  .map-legend {
+    gap: 40px;
+    font-size: 1.8vh;
+    margin-bottom: 15px;
+  }
+
+  .us_map {
+    padding-left: 1px;
+    padding-right: 1px;
   }
 }

@@ -3,6 +3,7 @@ const carousel = document.getElementById("carouselExampleIndicators");
 const closeCarousel = document.getElementById("closeCarousel");
 const overlay = document.getElementById("carouselOverlay");
 const targetDiv = document.getElementById("us_map");
+const mapLegend = document.getElementById("map-legend");
 
 // Button to scroll down to map-section
 document.getElementById("explore").addEventListener("click", () => {
@@ -28,9 +29,11 @@ function revealDiv() {
   if (isInViewport(targetDiv)) {
     targetDiv.style.opacity = "1";
     targetDiv.style.pointerEvents = "all";
+    mapLegend.style.opacity = "1";
   } else {
     targetDiv.style.opacity = "0";
     targetDiv.style.pointerEvents = "none";
+    mapLegend.style.opacity = "0";
   }
 }
 
