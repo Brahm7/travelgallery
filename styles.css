@@ -360,6 +360,10 @@ h3 {
     background-position: right center;
   }
 
+  .videos video {
+    pointer-events: none;
+  }
+
   .message {
     font-size: 1.8vh;
     text-align: center;
