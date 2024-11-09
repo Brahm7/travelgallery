@@ -4,6 +4,7 @@ const closeCarousel = document.getElementById("closeCarousel");
 const overlay = document.getElementById("carouselOverlay");
 const targetDiv = document.getElementById("us_map");
 const mapLegend = document.getElementById("map-legend");
+const message = document.getElementById("message");
 
 // Button to scroll down to map-section
 document.getElementById("explore").addEventListener("click", () => {
@@ -30,10 +31,12 @@ function revealDiv() {
     targetDiv.style.opacity = "1";
     targetDiv.style.pointerEvents = "all";
     mapLegend.style.opacity = "1";
+    message.style.opacity = "1";
   } else {
     targetDiv.style.opacity = "0";
     targetDiv.style.pointerEvents = "none";
     mapLegend.style.opacity = "0";
+    message.style.opacity = "0";
   }
 }
 
@@ -52,7 +55,8 @@ function openCarousel(images) {
   carousel.style.pointerEvents = "all";
   overlay.style.opacity = "1";
   overlay.style.pointerEvents = "all";
-  document.body.style.overflow = "hidden"; // Disable scrolling
+
+  document.body.style.overflow = "hidden";
 }
 
 // Function to close the carousel

@@ -38,9 +38,9 @@
         <h2>TRAVEL GALLERY</h2>
         <h3>
           In this gallery you will find pictures I have taken from my visits to
-          different states. Below, I've highlighted the few states I have
-          traveled to and visited. I look forward to many more adventures and
-          the chance to explore new places in the years to come.
+          different states. Below, I've highlighted the states I have traveled
+          to and visited. I look forward to more adventures and the chance to
+          explore new places in the years to come.
         </h3>
         <button id="explore">Explore Now.</button>
       </div>
@@ -428,6 +428,10 @@
         </svg>
       </div>
 
+      <div class="message" id="message">
+        Click on a state to explore its photo gallery!
+      </div>
+
       <div class="overlay" id="carouselOverlay"></div>
 
       <div
@@ -439,10 +443,10 @@
         <button id="closeCarousel" class="close-button">&times;</button>
 
         <ol class="carousel-indicators"></ol>
-        <!-- Will be dynamically updated -->
+        <!-- Updated in javascript -->
 
         <div class="carousel-inner"></div>
-        <!-- Will be dynamically updated -->
+        <!-- Updated in javascript -->
 
         <a
           class="carousel-control-prev"
@@ -465,6 +469,49 @@
       </div>
     </div>
 
-    <div class="videos"></div>
+    <div class="videos">
+      <div class="title"><h1>Travel Highlights</h1></div>
+      <div class="card-group">
+        <div class="card" id="georgetown">
+          <video class="card-img-top" autoplay muted loop>
+            <source src="videos/IMG_1629.mp4" type="video/mp4" />
+          </video>
+          <div class="card-body">
+            <h4 class="card-title">Georgetown</h4>
+            <p class="card-text">
+              A historic mountain town with 19th-century charm, scenic views,
+              and the famous Georgetown Loop Railroad. Perfect for exploring
+              Colorado’s mining heritage and mountain beauty.
+            </p>
+          </div>
+        </div>
+        <div class="card" id="newyorkcity">
+          <video class="card-img-top" autoplay muted loop>
+            <source src="videos/IMG_3501.mp4" type="video/mp4" />
+          </video>
+          <div class="card-body">
+            <h4 class="card-title">New York City</h4>
+            <p class="card-text">
+              Located on Liberty Island, this iconic monument offers stunning
+              views of Manhattan and is a must-see for visitors.
+            </p>
+          </div>
+        </div>
+        <div class="card" id="niagarafalls">
+          <video class="card-img-top" autoplay muted loop>
+            <source src="videos/IMG_3709.mp4" type="video/mp4" />
+          </video>
+          <div class="card-body">
+            <h4 class="card-title">Niagara Falls</h4>
+            <p class="card-text">
+              A breathtaking natural wonder on the U.S.-Canada border, renowned
+              for its powerful, cascading waterfalls. Visitors can experience
+              the falls up close by boat or from scenic viewpoints along the
+              river.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
