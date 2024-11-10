@@ -1,3 +1,17 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    const mainDiv = document.getElementById("main-section");
+    if (mainDiv) {
+      window.scrollTo(0, 0); // Scroll to the very top first
+      mainDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 100);
+});
+
 // Select elements for carousel and overlay
 const carousel = document.getElementById("carouselExampleIndicators");
 const closeCarousel = document.getElementById("closeCarousel");
