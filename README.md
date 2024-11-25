@@ -11,7 +11,7 @@ State-Specific Carousel: Clicking on a highlighted state displays a carousel of 
 Video Showcase: Three travel highlights videos embedded at the bottom of the page for an immersive experience.
 
 ## Technologies Used
-# HTML: Provides the structure of the gallery.
-# CSS: Custom styling to enhance visual appeal.
-# Bootstrap: Adds responsiveness and styling consistency.
-# JavaScript: Powers interactivity, such as the SVG map and carousels.
+- HTML: Provides the structure of the gallery.
+- CSS: Custom styling to enhance visual appeal.
+- Bootstrap: Adds responsiveness and styling consistency.
+- JavaScript: Powers interactivity, such as the SVG map and carousels.
